@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
         \App\Models\User::create([
             'name' => 'cszilla',
             'email' => 'cszilla@gmail.com',
-            'is_admin' => 1,
+            'is_admin' => true,
             'password' => bcrypt('12345678')
         ]);
     }
