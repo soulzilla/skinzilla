@@ -14,6 +14,7 @@
                     <b-link
                         v-for="composition of userCompositions"
                         @click="currentComposition = composition"
+                        v-bind:key="composition.id"
                         class="mx-1 btn" :class="currentComposition && currentComposition.id === composition.id ? 'btn-primary' : 'btn-outline-primary'">
                         {{ composition.name }}
                     </b-link>
