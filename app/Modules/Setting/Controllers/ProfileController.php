@@ -42,9 +42,8 @@ class ProfileController extends Controller
             'new_confirm_password' => ['same:new_password'],
         ]);
 
-        $user->update([
-            'password_hash' => Hash::make($request->post('new_password'))
-        ]);
+        $user->password = Hash::make($request->post('new_password'));
+        $user->save();
 
         return response()->json([
             'type' => self::RESPONSE_TYPE_SUCCESS,
