@@ -3,7 +3,7 @@
 use App\Modules\Banner\Controllers\BannerController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => ['jwt', 'admin']], function () {
+Route::group(['middleware' => ['jwt']], function () {
     Route::apiResource('banners', 'BannerController');
 });
 
